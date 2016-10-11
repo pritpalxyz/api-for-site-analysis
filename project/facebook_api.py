@@ -9,6 +9,8 @@ class url(object):
 
 	def geturl(self):
 		url = raw_input('Enter the URL::')
+
+		
 		req = Request(url)
 
 		html_page = urllib2.urlopen(req)

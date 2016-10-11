@@ -13,18 +13,18 @@ class url(object):
 		keyword = keyword.replace(".com/","")
 
 		#print keyword
-		token="EAACEdEose0cBAOtOmNcyajumnHTvvw8EPCpuLrNl0mitoVRYjYnm1QU3ZCeLVk0OcczHNECCJRnSKmBVhfHLh9uyr8z2y35XcwWNuwViglyBFbPwyHw4OLtXZBzb2PJqFzBJP5mzgfSfYo5ROfjS11M9CNUdvIkEvLgZBtokAZDZD"
+		token = "EAACEdEose0cBAMizvPd0ngoq5k3u2ZAuSZCPoDPTkwRKup524Y4QS5UujlvLvBov5P6cczuNluRdrzmjQBlhO6ZBvUkZB67KfFV96qk904sQ0i8ktH8FzXGcYOEFnaP1VCqXVa7gaZCpAZBflMRxKcZAjTSkuO0FDq4Dtn0KoMsXwZDZD"  # Access Token
 		typee="page"
 
-
+		keyword = keyword.title()
 		url=('https://graph.facebook.com/search?'
 			'q=%s'
 			'&type=%s'
 			'&access_token=%s') % (keyword, typee, token)
+		print url
 		response=urllib.urlopen(url)
 
 		data=json.loads(response.read())
-		print data
 		name= data['data'][0]['name']
 		idd = data['data'][0]['id']
 		print "NAME::"+name
